@@ -1,0 +1,144 @@
+@use "custom";
+
+/* Flash */
+.flash_custom_parent {
+  position: relative;
+
+  .alert_custom {
+    position: absolute;
+    top: var(--nav-height);
+    width: 100%;
+
+    .close_right {
+      float: right;
+    }
+  }
+}
+
+
+/* Navbar */
+.navbar_super {
+  position: fixed; // <--HERE
+  z-index: 1; // <--HERE
+
+  // padding-top: 0;
+  // margin-top:0;
+  .navbar_custom {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    height: 5rem;
+    gap: 1rem;
+  }
+
+  /* Navbar Left */
+  .nav_left {
+    display: flex;
+    justify-content: center;
+    background-color: green;
+    min-width: 0; // very important to keep other divs from being kicked out of screen on small screen ... max-width not set
+    max-width: 8rem;
+  }
+
+  .ws_logo_big {
+    display: none;
+  }
+
+  .ws_logo_small {
+    min-width: auto;
+    height: 100%;
+    // max-width: 100%;
+    border-radius: 1rem;
+    ;
+  }
+
+  /* Navbar Center */
+  .nav_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    flex-wrap: wrap;
+    // width:100%;
+  }
+  .page_title{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Navbar Right */
+  .nav_right {
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  nav.btn_menu {
+    display: block;
+  }
+
+  .nav_menu {
+    // position: absolute;
+    cursor: pointer;
+    // right:1rem;
+    height: 5rem;
+  }
+  .nav_exit_div{
+    display:flex;
+    justify-content: end;
+    padding: 1rem 1rem 0 0;
+  }
+  nav {
+    display: none;
+  }
+
+  nav {
+    position: fixed;
+    z-index: 1;
+    width: 50%;
+    right: 0;
+    top: 0;
+    background: var(--bs-gray-500);
+    height: 100%;
+    font-size: 1.25rem;
+
+    .mobile-menu-exit {
+      float: right;
+      margin: .5em;
+      cursor: pointer;
+    }
+  }
+
+
+}
+
+
+/* Footer */
+.footer {
+  margin-top: auto;
+  padding: 1rem 3rem var(--nav-height) 3rem;
+  background-color: var(--bs-gray-200);
+
+  // height: auto !important;
+  // height:auto;
+  // flex-grow: 2;
+  // min-height: 100%;
+  .footer_right {
+
+    // display:flex;
+    // justify-content: end;
+    // flex-wrap:wrap;
+    .footer_link_item {
+      width: 100%;
+
+      display: flex;
+      justify-content: end;
+      padding-right: 3rem;
+    }
+  }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='/css/main.css') }}">
+  <!-- /static/images/blog32.png -->
+
+  <!-- Import the Bootstrap stylesheet -->
+  <script src="../static/custom_js_and_css/bootstrap.bundle.js"></script>
+  <script src="../static/custom_js_and_css/jquery-3.6.1.js"></script>
+
+
+
+
+
+  <title>Navbar Example</title>
+</head>
+
+<body id="body">
+
+  <div class="navbar_super">
+    <div class=" navbar_custom  bg-primary " id="nav_section">
+
+
+      <div class="nav_left">
+
+        <!-- <div class="logo_div"> -->
+          <img class="ws_logo_big" width="128" alt="API Tester PNG - big"
+          src="{{ url_for('static', filename='images/tuRinconIcon.png') }}">
+
+        <img class="ws_logo_small" alt="API Tester PNG - small"
+          src="{{ url_for('static', filename='images/tuRinconIcon.png') }}">
+        <!-- </div> -->
+
+
+      </div>
+
+      <div class="nav_center">
+        {% if rincon_name %}
+        <div class="page_title">
+          <h1>{{ rincon_name }}</h1>
+        </div>
+          {% else %}
+          <div class="page_title">
+            <h1>Tu Rincón</h1>
+          </div>
+          
+        
+
+        {% endif %}
+
+        {% if current_user %}
+        {{ current_user.username }}
+        {% endif %}
+      </div>
+
+      <div class="nav_right">
+        <img class="nav_menu" id="nav_menu" src="{{ url_for('static', filename='images/white-hamburger-menu-icon-24.png') }}"
+        alt="Open Navigation">
+
+        <nav>
+          <div class="nav_exit_div">
+            <img id="nav_exit" class="nav_exit" src="{{ url_for('static', filename='images/exit.svg') }}" alt="Close Navigation">
+          </div>
+          
+
+          </nav>
+
+      </div>
+
+    </div>
+  </div>
+
+  {% block main %}{% endblock %}
+
+
+
+</body>
+
+</html>
+<script>
+  const mobileBtn = document.getElementById('nav_menu')
+  nav = document.querySelector('nav')
+  mobileBtnExit = document.getElementById('nav_exit');
+
+  mobileBtn.addEventListener('click', () => {
+    nav.classList.add('btn_menu');
+  })
+
+  mobileBtnExit.addEventListener('click', () => {
+    nav.classList.remove('btn_menu');
+  })
+</script>

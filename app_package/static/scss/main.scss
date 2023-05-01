@@ -1,0 +1,38 @@
+@use "custom";
+@use "navbar";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+
+:root {
+  --nav-height: 123px;
+  // --table-chart-width: 100%;
+}
+
+body {
+  // background-color: #CFD4D9;
+  background-color: var(--bs-gray-400);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto Slab', serif;
+}
+
+.main {
+  padding-top: var(--nav-height);
+  padding-bottom: var(--nav-height);
+  display: flex;
+  justify-content: center;
+}
+
+.std_framing {
+  border: 1px solid var(--std_framing_border_color);
+  border-width: .5em;
+  border-radius: 3rem;
+  background-color: var(--bs-gray-500);
+  // padding: 1rem 0 1rem 0;
+  padding: 1rem;
+  color: var(--nick_page_theme_font_color);
+  // width: 100%;
+  font-size: var(--normal_font_size)
+}
+
